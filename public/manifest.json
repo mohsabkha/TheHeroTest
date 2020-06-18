@@ -1,0 +1,8 @@
+{
+  "short_name": "Hero Test",
+  "name": "The Hero Test",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

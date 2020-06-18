@@ -1,0 +1,163 @@
+@import './layout.scss';
+
+$color-header-primary-first: #2eafffb2;
+$color-header-primary-second: #f200ffb2;
+$color-light: #ffffff;
+$color-dark: #4d4d4d;
+
+.clearDisplay{
+    display: none;
+}
+
+@mixin btn {
+    border-radius: 100rem;
+    background-color: $color-light;
+    opacity: .9;
+    transition-property: all;
+    transition-duration: .5s;
+    font-size: 1.4rem;
+    border: none;
+}
+  
+.myButton {
+    /* rounds the edges of the div */
+    box-shadow: .5rem .5rem 1rem black;
+    color: #777777;
+    /* padding for bottom/top and left/right*/
+    padding: 1.5rem 3rem;
+    position: relative;
+    margin-top: 3rem;
+    animation-name: moveInBottom;
+    animation-duration: 2s;
+    @include btn;
+    &:hover {
+        opacity: 1;
+        color: $color-light;
+        /* when padding is involved with elements */
+        display: inline-block;
+        transform: translateY(-.3rem);
+        box-shadow: 1.5rem 1.5rem 3rem black;
+        background-color: rgba(157, 68, 209, 0.459);
+        &::after{
+            transform: scale(1.5);
+            opacity: 0;
+            background-color: $color-light;
+          }
+      }
+      &:active {
+        transform: translateY(-1px);
+        box-shadow: 1.4rem 1.4rem 2.9rem black;
+      }
+      &:focus {
+        outline: none;
+      }
+      &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+    
+        @include btn;
+      }
+}
+
+.logoBox{
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    height: 5rem;
+    width: 5rem;
+}
+  
+.wizard{
+    filter: drop-shadow(1rem 1rem 2rem rgb(0, 0, 0));
+}
+.wizardAfterClick{
+    transition-property: all;
+    transition-duration: 2s;
+    transition-delay: .1s;
+    transform: scale(2);
+}
+  
+.logo{
+    height: 5rem;
+    transition-property: all;
+    transition-duration: 1s;
+    &:hover{
+        transform: scale(1.25);
+      }
+}
+  
+.h4 {
+    color: rgba(255, 255, 255, 0.514);
+    display: block;
+    font-family: monospace;
+}
+  
+@keyframes moveInTop {
+    0% {
+        transform: translateY(-105%);
+    }
+  
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveInTopV2{
+  0% {
+    background-color: white;
+    transform: translateY(-150%);
+  }
+  50%{
+    background-color: white;
+  }
+  100% {
+    background-color: rgb(218, 218, 218);
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+  
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+  
+  @keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(50%);
+    }
+    75%{
+      opacity: 0;
+      transform: translateY(50%);
+    }
+    100%{
+      opacity: 1;
+      transfrom: translateY(0%)
+    }
+  }
+  
+  @keyframes fadeIn{
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

@@ -1,0 +1,16 @@
+html {
+  font-size: 62.5%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  /* the spacing between lines */
+  line-height: 1.7;
+  padding:1rem 3rem;
+  box-sizing: border-box;
+  position: relative;
+}

@@ -1,0 +1,13 @@
+.App{
+    position: relative;
+    height: 95vh;
+    width: 95vw;
+    margin: 0;
+    transform-style: preserve-3d;
+  }
+  *{
+      margin: 0rem;
+      padding: 0rem;
+      backface-visibility: hidden;
+  }
+    

@@ -1,0 +1,244 @@
+@import './../../sass/main.scss';
+@import './../../sass/layout.scss';
+
+.about{
+    text-align: center;
+    padding: 20rem 0;
+    position: relative;
+    display: block;
+    top: 65vh;
+    width: 95vw;
+    background-color: rgb(218, 218, 218);
+    z-index: -1;
+    animation-name: moveInTopV2;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+}
+
+.bodyHeader{
+  background-image: linear-gradient(to right, $color-header-primary-first, rgb(255, 0, 43));
+  background-clip: text;
+  font-family: Impact;
+  width: 50vw;
+  display: inline-block;
+  /* proper spacing between letters */
+  color: rgba(0, 0, 0, 0);
+  /* animations */
+  transition-property: all;
+  transition-duration: .5s;
+  &:hover{
+      transform: skewX(-10deg) scale(1.2)
+  }
+}
+
+.answer{
+    position: absolute ;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 50%);
+}
+  
+.questionContentBox{
+    box-shadow: 5px 5px 20px black;
+    border-radius: 10rem;
+    transform: translate(-50%);
+    left:50%;
+    width: 80%;
+    height: 50rem;
+    position: absolute;
+    background-image: radial-gradient(rgba(255, 0, 247, 0.63), rgba(39, 115, 255, 0.783)), url('./../../../assets/fantasy2.jpg');
+    background-size: cover;
+    background-position: top left;
+    text-align: center;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+}
+
+
+@mixin optionCircles ( $backgroundColor, $borderColor, $checkedColor, $hoverColor){
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    padding-right: 4rem;
+
+    input {
+        display: none;
+    }
+    input:checked + .circle {
+            background-color: $checkedColor;
+            transform: scale(1.25);
+    }
+    .circle{
+        border: .5rem solid $borderColor;
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        background-color: $backgroundColor;
+        position: absolute;
+        border-radius: 50%;
+        transition-property: all;
+        transition-duration: .5s;
+        left: 0;
+        top: 0;
+        &:hover{
+            background-color: $hoverColor;
+            transform: scale(1.25);
+        }
+    }
+}
+
+.radio{
+    @include optionCircles(rgba(255, 255, 255, 0), white, rgb(54, 151, 255), rgb(232, 54, 255));
+}
+.radioStrAgree{
+    @include optionCircles(rgba(255, 255, 255, 0), white, rgb(54, 151, 255), rgb(54, 151, 255));
+}
+.radioAgree{
+    @include optionCircles(rgba(255, 255, 255, 0), white, rgba(54, 151, 255, 0.6), rgba(54, 151, 255, .6));
+}
+.radioNeutral{
+    @include optionCircles(rgba(255, 255, 255, 0), white, rgb(92, 92, 92), rgb(92, 92, 92));
+}
+.radioDisagree{
+    @include optionCircles(rgba(255, 255, 255, 0), white, rgba(255, 54, 148, .6), rgba(255, 54, 148, .6));
+}
+.radioStrDisagree{
+    @include optionCircles(rgba(255, 255, 255, 0), white, rgb(255, 54, 148), rgb(255, 54, 148));
+}
+
+.labelAgree{
+    letter-spacing: .5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Georgia";
+    float: right;
+    text-shadow: .1rem .1rem .5rem rgb(255, 255, 255);
+}
+
+.labelDisagree{
+    letter-spacing: .5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Georgia;
+    float: left;
+    text-shadow: .1rem .1rem .5rem rgb(255, 255, 255);
+}
+
+
+
+@mixin questions($opacity) {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+    position: absolute;
+    //transform: translate(-50%);
+    top:10%;
+    left:10%;
+    font-size: 3rem;
+    width: 80%;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    transition-property: all;
+    transition-duration: .5s;
+    opacity: $opacity;
+    letter-spacing: .25rem;
+    animation-duration: 4s;
+}
+
+.questionText{
+    @include questions(1);
+
+}
+  
+.altQuestionText{
+    @include questions(0)
+}
+
+@mixin radioButton($outlineColor, $hoverColor) {
+    outline-color: $outlineColor;
+    &:hover{
+        background: $hoverColor;
+        border-color: $outlineColor;
+        outline-color: $outlineColor;
+    }
+    
+}
+
+
+
+@mixin btn {
+    border-radius: 100rem;
+    opacity: .9;
+    transition-property: all;
+    transition-duration: .5s;
+    font-size: 1.4rem;
+    border: none;
+}
+.questionButton {
+    /* rounds the edges of the div */
+    box-shadow: .5rem .5rem 1rem black;
+    color: #777777;
+    /* padding for bottom/top and left/right*/
+    padding: 1.5rem 3rem;
+    position: absolute ;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    margin-top: 3rem;
+    animation-name: moveInBottom;
+    animation-duration: 2s;
+    
+    @include btn;
+    &:hover {
+        opacity: 1;
+        color: $color-light;
+        /* when padding is involved with elements */
+        //transform: translateX(-1rem);
+    
+        box-shadow: 1.5rem 1.5rem 3rem black;
+        background-color: rgba(247, 33, 215, 0.74);
+        &::after{
+            transform: scale(1.5);
+            opacity: 0;
+            background-color: $color-light;
+          }
+    }
+    &:active {
+        //transform: translateY(-1px);
+        box-shadow: 1.4rem 1.4rem 2.9rem black;
+    }
+    &:focus {
+        outline: none;
+    }
+    &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+    
+        @include btn;
+    }
+}
+
+@keyframes moveIn{
+    0%{
+        transform: translate(-50%);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+}

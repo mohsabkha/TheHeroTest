@@ -1,0 +1,111 @@
+{
+    "intro": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+    ],
+    "heroScore":{
+        "first":0,
+        "second":0,
+        "third":0,
+        "fourth":0
+    },
+    "questions":
+    [
+        {
+            "question": "You often prefer to be in an exciting fast-paced environment, not slower-paced with time for contemplation",
+            "trait": "first",
+            "score": -1
+        },
+        {
+            "question": "You Often Could Be Described As Reserved or Private, Rather Than Talkative Or Outgoing",
+            "trait": "first",
+            "score": 1
+        },
+        {
+            "question": "You Often Tend To Think Outloud Or Brainstorm Ideas With Others, Rather Than Inside Your Head",
+            "trait": "first",
+            "score": -1
+        },
+        {
+            "question": "You Often Will Observe Your Surroundings, Rather Than Be At The Center of Attention",
+            "trait": "first",
+            "score": 1
+        },
+
+
+
+
+        {
+            "question": "You Often Focus On The Reality Of How Things Are Rather Than The Possibilities Of How Things Could Be",
+            "trait": "Second",
+            "score": 1
+        },
+        {
+            "question": "You Often Focus On The Big Picture Rather Than The Concrete Facts or Details",
+            "trait": "Second",
+            "score": -1
+        },
+        {
+            "question": "second3",
+            "trait": "Second",
+            "score": ""
+        },
+        {
+            "question": "second4",
+            "trait": "Second",
+            "score": ""
+        },
+
+
+
+
+        {
+            "question": "third1",
+            "trait": "third",
+            "score": ""
+        },
+        {
+            "question": "third2",
+            "trait": "third",
+            "score": ""
+        },
+        {
+            "question": "third3",
+            "trait": "third",
+            "score": ""
+        },
+        {
+            "question": "third4",
+            "trait": "third",
+            "score": ""
+        },
+
+
+
+
+        {
+            "question": "third1",
+            "trait": "fourth",
+            "score": ""
+        },
+        {
+            "question": "third2",
+            "trait": "fourth",
+            "score": ""
+        },
+        {
+            "question": "third3",
+            "trait": "fourth",
+            "score": ""
+        },
+        {
+            "question": "third4",
+            "trait": "fourth",
+            "score": ""
+        }
+    ]
+}
